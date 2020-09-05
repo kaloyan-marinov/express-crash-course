@@ -14,10 +14,14 @@ const app = express();
 //   */
 // });
 
-// Init middleware (function)
+// Init middleware (function) for logging
 /*
 app.use(logger);
 */
+// Init Body Parser middleware
+app.use(express.json());
+// Init middleware for handling form submissions
+app.use(express.urlencoded({ extended: false }));
 
 // Simple REST API
 app.use("/api/members", require("./routes/api/members"));
